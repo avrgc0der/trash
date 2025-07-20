@@ -1,6 +1,8 @@
 NAME = minishell
 
-CFILES = src/minishell.c src/env/env.c
+ENV = src/env
+
+CFILES = src/minishell.c $(ENV)/env.c $(ENV)/env2.c $(ENV)/env_test.c
 
 OBJECTS = $(CFILES:.c=.o)
 

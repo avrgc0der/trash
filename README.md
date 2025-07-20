@@ -62,5 +62,3 @@ store each line in a node
 
 	find variable by searching for key
 	if found, return node, else null
-
-	

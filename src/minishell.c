@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enoshahi <enoshahi@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:00:32 by mtangalv          #+#    #+#             */
-/*   Updated: 2025/07/20 21:12:03 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:03:30 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_env_array(t_envs *env)
 	i = 0;
 	if (!env)
 		return ;
-	while(env->envs[i])
+	while (env->envs[i])
 	{
 		printf("%s\n", env->envs[i]);
 		i++;
@@ -35,7 +35,6 @@ int	main(int argc, char **argv, char **envp)
 	(void)argv;
 	(void)envp;
 	print_env(envp, &envs);
-	// print_env_array(&envs);
 	while (1)
 	{
 		user_input = readline(PROMPT);

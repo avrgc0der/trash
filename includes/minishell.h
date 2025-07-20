@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enoshahi <enoshahi@student.42abudhabi.ae>  +#+  +:+       +#+        */
+/*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:23:16 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/20 15:01:15 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/21 00:44:41 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,19 @@ enum e_token_types
 
 // * 	environment functions:
 void	print_env(char **envp, t_envs *environ);
+void	envs_array(t_envs *list_envs, t_env *env);
+char	*env_join(t_env *env);
+int		env_size(t_env *env);
+void	modify_env(t_env *env, char *key_name, char *new_val);
+void	change_shlvl(t_env *env);
+int		array_size(char **array);
+char	*return_key(t_env *node);
+char	*return_val(t_env *node);
+void	add_env(t_env **env, t_env *new);
+t_env	*env_last(t_env *lst);
+t_env	*env_var_len(char *envp);
+
+// *	tester functions:
+void	test_env(char **envp, t_envs *environ);
 
 #endif
