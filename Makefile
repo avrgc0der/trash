@@ -1,6 +1,6 @@
 NAME = minishell
 
-CFILES = src/minishell.c
+CFILES = src/minishell.c src/env/env.c
 
 OBJECTS = $(CFILES:.c=.o)
 
@@ -21,21 +21,21 @@ all: subsystems $(NAME) build
 
 build :
 
-		@echo "$(MAGENTA) /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\ $(RESET)"
-		@echo "$(MAGENTA)( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )$(RESET)"
-		@echo "$(MAGENTA) > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ < $(RESET)"
-		@echo "$(MAGENTA) /\_/\ $(RESET) $(BLUE)  █████                                █████   $(RESET) $(MAGENTA) /\_/\ $(RESET)"
-		@echo "$(MAGENTA)( o.o )$(RESET) $(BLUE) ░░███░                               ░░███   $(RESET) $(MAGENTA)( o.o )$(RESET)"
-		@echo "$(MAGENTA) > ^ < $(RESET) $(GREEN) ███████   ████████   ██████    █████  ░███████ $(RESET) $(MAGENTA) > ^ < $(RESET)"
-		@echo "$(MAGENTA) /\_/\ $(RESET) $(GREEN) ░░░███░   ░░███░░███ ░░░░░███  ███░░   ░███░░███$(RESET) $(MAGENTA) /\_/\ $(RESET)"
-		@echo "$(MAGENTA)( o.o )$(RESET) $(YELLOW)  ░███     ░███ ░░░   ███████ ░░█████  ░███ ░███$(RESET) $(MAGENTA)( o.o )$(RESET)"
-		@echo "$(MAGENTA) > ^ < $(RESET) $(YELLOW)  ░███ ███ ░███      ███░░███  ░░░░███ ░███ ░███$(RESET) $(MAGENTA) > ^ < $(RESET)"
-		@echo "$(MAGENTA) /\_/\ $(RESET) $(YELLOW)  ░░█████  █████    ░░████████ ██████  ████ █████$(RESET) $(MAGENTA) /\_/\ $(RESET)"
-		@echo "$(MAGENTA)( o.o )$(RESET) $(OTHER)   ░░░░░  ░░░░░      ░░░░░░░░ ░░░░░░  ░░░░ ░░░░░$(RESET) $(MAGENTA)( o.o )$(RESET)"
-		@echo "$(MAGENTA) > ^ < $(RESET) $(WHITE)    a terminal recreation application shell     $(RESET) $(MAGENTA) > ^ < $(RESET)"
-		@echo "$(MAGENTA) /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\ $(RESET)"
-		@echo "$(MAGENTA)( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )$(RESET)"
-		@echo "$(MAGENTA) > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ < $(RESET)"
+		@echo "$(MAGENTA) /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\ $(RESET)"
+		@echo "$(MAGENTA)( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )$(RESET)"
+		@echo "$(MAGENTA) > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ < $(RESET)"
+		@echo "$(MAGENTA) /\_/\ $(RESET) $(BLUE)   █████                                █████          $(RESET)$(MAGENTA) /\_/\ $(RESET)"
+		@echo "$(MAGENTA)( o.o )$(RESET) $(BLUE)  ░░███░                               ░░███           $(RESET)$(MAGENTA)( o.o )$(RESET)"
+		@echo "$(MAGENTA) > ^ < $(RESET) $(GREEN)  ███████   ████████   ██████    █████  ░███████       $(RESET)$(MAGENTA) > ^ < $(RESET)"
+		@echo "$(MAGENTA) /\_/\ $(RESET) $(GREEN)  ░░░███░   ░░███░░███ ░░░░░███  ███░░   ░███░░███     $(RESET)$(MAGENTA) /\_/\ $(RESET)"
+		@echo "$(MAGENTA)( o.o )$(RESET) $(YELLOW)   ░███     ░███ ░░░   ███████ ░░█████  ░███ ░███      $(RESET)$(MAGENTA)( o.o )$(RESET)"
+		@echo "$(MAGENTA) > ^ < $(RESET) $(YELLOW)   ░███ ███ ░███      ███░░███  ░░░░███ ░███ ░███      $(RESET)$(MAGENTA) > ^ < $(RESET)"
+		@echo "$(MAGENTA) /\_/\ $(RESET) $(YELLOW)   ░░█████  █████    ░░████████ ██████  ████ █████     $(RESET)$(MAGENTA) /\_/\ $(RESET)"
+		@echo "$(MAGENTA)( o.o )$(RESET) $(OTHER)    ░░░░░  ░░░░░      ░░░░░░░░ ░░░░░░  ░░░░ ░░░░░      $(RESET)$(MAGENTA)( o.o )$(RESET)"
+		@echo "$(MAGENTA) > ^ < $(RESET) $(WHITE)     a terminal recreation application shell           $(RESET)$(MAGENTA) > ^ < $(RESET)"
+		@echo "$(MAGENTA) /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\  /\_/\ $(RESET)"
+		@echo "$(MAGENTA)( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )( o.o )$(RESET)"
+		@echo "$(MAGENTA) > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ <  > ^ < $(RESET)"
 
 MAGENTA=\033[95m
 BLUE=\033[36m

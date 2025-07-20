@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
+/*   By: enoshahi <enoshahi@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:23:16 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/20 13:29:29 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/20 15:01:15 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ enum e_token_types
 // ! || FUNCTION PROTOTYPES ||
 
 // * 	environment functions:
-t_env	*env_var_len(char *envp);
-t_env	*env_store_var(char *envp);
+void	print_env(char **envp, t_envs *environ);
 
 #endif
