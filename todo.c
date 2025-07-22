@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 00:40:25 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/21 00:40:44 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:18:07 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@
 //TODO 	- get path
 //TODO 	- check env if valid
 //TODO 	- deletes variable	-> unset
-//TODO 	- print export		-> export
 //TODO 	- popping function
-//TODO 	- add variable 		-> export
-//TODO 	- create new variable  || check for no SHLVL
 
+//TODO 	- print export		-> export
+// * IF `export` with NO arguments
+// * sort by alpha, adds `declare -x KEY="VAL"`
+
+//TODO 	- add variable 		-> export
+// *  funct that returns void, recieves key and val, then adds to the list
+
+// ! 	- create new variable  || check for no SHLVL
 // ! 	- get key/var name                      --->DONE
 // ! 	- lst functions                         --->DONE
 // ! 	- get array length                      --->DONE

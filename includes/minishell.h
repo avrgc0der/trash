@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:23:16 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/21 00:44:41 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:13:38 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,11 @@ char	*return_val(t_env *node);
 void	add_env(t_env **env, t_env *new);
 t_env	*env_last(t_env *lst);
 t_env	*env_var_len(char *envp);
+void	env_create_var(t_env *env, char *key, char *val);
+
+// *	cleanup functions:
+void	env_free_all(t_envs *envs);
+void	env_free_node(t_env *env);
 
 // *	tester functions:
 void	test_env(char **envp, t_envs *environ);
