@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:00:32 by mtangalv          #+#    #+#             */
-/*   Updated: 2025/07/21 00:03:30 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:19:50 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	print_env_array(t_envs *env)
 		printf("%s\n", env->envs[i]);
 		i++;
 	}
+	
 }
 
 int	main(int argc, char **argv, char **envp)

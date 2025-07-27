@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 00:40:25 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/22 21:18:07 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:41:31 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 //* - create helper functions
 
 //TODO 	- get path
+
 //TODO 	- check env if valid
 //TODO 	- deletes variable	-> unset
 //TODO 	- popping function
@@ -31,7 +32,7 @@
 // *  funct that returns void, recieves key and val, then adds to the list
 
 // ! 	- create new variable  || check for no SHLVL
-// ! 	- get key/var name                      --->DONE
+// ! 	- get key/var name                     	--->DONE
 // ! 	- lst functions                         --->DONE
 // ! 	- get array length                      --->DONE
 // ! 	- get list length                       --->DONE

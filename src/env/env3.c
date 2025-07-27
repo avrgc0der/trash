@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 21:07:10 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/22 23:49:31 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/26 14:21:05 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int	strchr_len(char *str, char c)
 
 void	export(t_envs *envs)
 {
-	char	**tmp;
 	int		i;
+	char	**tmp;
 	int		key_len;
 
 	i = 0;
@@ -52,8 +52,10 @@ void	export(t_envs *envs)
 	key_len = strchr_len(tmp, '=');
 	while (tmp[i])
 	{
+		
+		i++;
 	}
-	printf("declare -x %s=\"%s\"", new->key, new->val);
+	printf("declare -x %s=\"%s\"", );
 }
 // * IF `export` with NO arguments
 // * sort by alpha, adds `declare -x KEY="VAL"`

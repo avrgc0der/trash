@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:23:16 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/22 21:13:38 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/07/26 20:18:43 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <sys/wait.h>
-
-# define PROMPT "trash >> " 
+# define PROMPT "trash >> "
 
 // ! linked list for the environment variables
 typedef struct s_env
