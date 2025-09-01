@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 21:07:10 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/26 14:21:05 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/08/27 11:55:53 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	env_create_var(t_env *env, char *key, char *val)
 {
 	t_env	*new;
 
-	if (!new || !key || !val)
+	new = NULL;
+	if (!key || !val)
 		return ;
 	new->key = ft_strdup(key);
 	new->val = ft_strdup(val);
@@ -27,35 +28,23 @@ void	env_create_var(t_env *env, char *key, char *val)
 }
 
 //TODO 	- print export		-> export
-int	strchr_len(char *str, char c)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (i);
-		i++;
-	}
-	return (-1);
+void	alphabetize_envs(t_envs *envs)
+{
+	// * go through 
 }
 
-void	export(t_envs *envs)
+void	export(t_envs *envs, char *args)
 {
-	int		i;
-	char	**tmp;
-	int		key_len;
+	t_env	*temp;
+	(void)args;
 
-	i = 0;
-	tmp = envs->envs;
-	key_len = strchr_len(tmp, '=');
-	while (tmp[i])
+	temp = envs->env;
+	while (temp->next)
 	{
-		
-		i++;
+		printf("declare -x %s=\"%s\"\n", temp->key, temp->val);
+		temp = temp->next;
 	}
-	printf("declare -x %s=\"%s\"", );
 }
 // * IF `export` with NO arguments
 // * sort by alpha, adds `declare -x KEY="VAL"`

@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 16:00:32 by mtangalv          #+#    #+#             */
-/*   Updated: 2025/07/26 20:19:50 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/08/27 11:49:31 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv, char **envp)
 	(void)argv;
 	(void)envp;
 	print_env(envp, &envs);
+	export(&envs, NULL);
 	while (1)
 	{
 		user_input = readline(PROMPT);

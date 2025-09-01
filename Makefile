@@ -2,7 +2,7 @@ NAME = minishell
 
 ENV = src/env
 
-ENVFILES = $(ENV)/env.c $(ENV)/env2.c $(ENV)/env_test.c $(ENV)/env_free.c
+ENVFILES = $(ENV)/env.c $(ENV)/env2.c $(ENV)/env3.c $(ENV)/env_test.c $(ENV)/env_free.c
 
 CFILES = src/minishell.c $(ENVFILES)
 
