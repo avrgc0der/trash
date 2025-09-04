@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 15:31:26 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/07/21 00:44:31 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/09/05 02:04:03 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static t_env	*env_search(t_env *env, char *key_name)
 	return (NULL);
 }
 
-void	print_env(char **envp, t_envs *environ)
+void	print_env(char **envp, t_envs *environ, int flag)
 {
 	int		i;
 	t_env	*new;
@@ -92,14 +92,14 @@ void	print_env(char **envp, t_envs *environ)
 		new = env_var_len(envp[i]);
 		if (new != NULL)
 		{
-			printf("%s=%s\n", new->key, new->val);
+			if (flag == 1)
+				printf("%s=%s\n", new->key, new->val);
 			env_search(environ->env, "USER");
 			add_env(&environ->env, new);
 		}
 		i++;
 	}
 	envs_array(environ, environ->env);
-	test_env(envp, environ);
 }
 
 // *  make new pointer = head

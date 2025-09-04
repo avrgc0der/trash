@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 19:23:16 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/08/27 11:49:01 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/09/05 01:56:03 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ enum e_token_types
 // ! || FUNCTION PROTOTYPES ||
 
 // * 	environment functions:
-void	print_env(char **envp, t_envs *environ);
+void	print_env(char **envp, t_envs *environ, int flag);
 void	envs_array(t_envs *list_envs, t_env *env);
 char	*env_join(t_env *env);
 int		env_size(t_env *env);
@@ -87,7 +87,8 @@ void	add_env(t_env **env, t_env *new);
 t_env	*env_last(t_env *lst);
 t_env	*env_var_len(char *envp);
 void	env_create_var(t_env *env, char *key, char *val);
-void	export(t_envs *envs, char *args);
+void	export(char **envp, t_envs *envs, char *args);
+void	alphabetize_envs(t_env **temp, int size);
 
 // *	cleanup functions:
 void	env_free_all(t_envs *envs);

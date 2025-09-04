@@ -6,7 +6,7 @@
 /*   By: enoshahi < enoshahi@student.42abudhabi.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 21:07:10 by enoshahi          #+#    #+#             */
-/*   Updated: 2025/08/27 11:55:53 by enoshahi         ###   ########.fr       */
+/*   Updated: 2025/09/05 02:03:48 by enoshahi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,67 @@ void	env_create_var(t_env *env, char *key, char *val)
 	add_env(&env, new);
 }
 
-//TODO 	- print export		-> export
-
-void	alphabetize_envs(t_envs *envs)
+void	alphabetize_envs(t_env **temp, int size)
 {
-	// * go through 
-}
+	int		i;
+	int		j;
+	t_env	*swap;
 
-void	export(t_envs *envs, char *args)
-{
-	t_env	*temp;
-	(void)args;
-
-	temp = envs->env;
-	while (temp->next)
+	i = 0;
+	while (i < size - 1)
 	{
-		printf("declare -x %s=\"%s\"\n", temp->key, temp->val);
-		temp = temp->next;
+		j = i + 1;
+		while (j < size)
+		{
+			if (ft_strcmp(temp[i]->key, temp[j]->key) > 0)
+			{
+				swap = temp[i];
+				temp[i] = temp[j];
+				temp[j] = swap;
+			}
+			j++;
+		}
+		i++;
 	}
 }
-// * IF `export` with NO arguments
-// * sort by alpha, adds `declare -x KEY="VAL"`
 
-// * declare -x SHELL="/bin/bash"
-// * SHELL=/bin/bash
+void	print_export(int size, t_env **exp)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (exp[i]->val)
+			printf("declare -x %s=\"%s\"\n", exp[i]->key, exp[i]->val);
+		else
+			printf("declare -x %s\n", exp[i]->key);
+		i++;
+	}
+}
+
+void	export(char **envp, t_envs *envs, char *args)
+{
+	t_env	*temp;
+	t_env	**exp;
+	int		size;
+	int		i;
+
+	i = 0;
+	(void)args;
+	(void)envp;
+	print_env(envp, envs, 0);
+	size = env_size(envs->env);
+	exp = malloc(sizeof(t_env *) * size);
+	if (!exp)
+		return ;
+	temp = envs->env;
+	while (temp)
+	{
+		exp[i++] = temp;
+		temp = temp->next;
+	}
+	alphabetize_envs(exp, size);
+	print_export(size, exp);
+	free(exp);
+}
